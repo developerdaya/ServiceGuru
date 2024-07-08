@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="50dp"
+    tools:context=".ui.m1.SignupActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        tools:layout_editor_absoluteX="16dp">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/dark_blue"
+            android:text="Create Account!"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginTop="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/otpText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="Service Guru makes life simple."
+            android:textSize="14sp"
+            android:gravity="center"
+            android:textColor="@color/dark_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mCardProfileIcon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:cardCornerRadius="50dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/otpText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+        <ImageView
+            android:id="@+id/mProfileIcon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/profile_icon"
+
+            />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <ImageView
+            android:id="@+id/mAddIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/plus_icon1"
+            android:layout_marginEnd="5dp"
+            android:elevation="5dp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/mCardProfileIcon"
+            app:layout_constraintEnd_toEndOf="@+id/mCardProfileIcon"
+            />
+
+
+
+
+
+
+
+        <EditText
+            android:id="@+id/mFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_round"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="First Name"
+            android:inputType="text"
+            android:maxLength="40"
+            android:paddingStart="20dp"
+            android:paddingEnd="50dp"
+            android:paddingVertical="14dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mCardProfileIcon" />
+
+
+
+          <EditText
+            android:id="@+id/mLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_round"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="Last Name"
+            android:inputType="text"
+            android:maxLength="40"
+            android:paddingStart="20dp"
+            android:paddingEnd="50dp"
+            android:paddingVertical="14dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mFirstName" />
+
+
+
+
+
+
+
+
+
+        <EditText
+            android:id="@+id/mValidEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_round"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="Valid Email"
+            android:inputType="text"
+            android:maxLength="50"
+            android:paddingStart="20dp"
+            android:paddingEnd="50dp"
+            android:paddingVertical="15dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mLastName" />
+
+        <ImageView
+            android:id="@+id/mEmail1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="15dp"
+            android:src="@drawable/mail"
+            app:layout_constraintBottom_toBottomOf="@+id/mValidEmail"
+            app:layout_constraintEnd_toEndOf="@+id/mValidEmail"
+            app:layout_constraintTop_toTopOf="@+id/mValidEmail"
+            app:tint="#6A6A6A" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mobileLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            android:paddingHorizontal="15dp"
+            android:background="@drawable/bg_round"
+            app:layout_constraintTop_toBottomOf="@+id/mValidEmail"
+            tools:layout_editor_absoluteX="16dp">
+
+
+            <ImageView
+                android:id="@+id/mFlag"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/india_flag"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+
+            <TextView
+                android:id="@+id/ccpMobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:paddingEnd="10dp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="+91"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/mView"
+                app:layout_constraintStart_toEndOf="@+id/mFlag"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <View
+                android:id="@+id/mView"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="@color/smooth_white"
+                app:layout_constraintBottom_toBottomOf="@+id/mEnterMobile"
+                app:layout_constraintStart_toEndOf="@+id/ccpMobile"
+                app:layout_constraintTop_toTopOf="@+id/mEnterMobile" />
+
+            <EditText
+                android:id="@+id/mEnterMobile"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:background="@null"
+                android:fontFamily="@font/montserrat_regular"
+                android:hint="Phone number"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:paddingVertical="15dp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@id/ccpMobile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/ccpMobile"
+                app:layout_constraintTop_toTopOf="@+id/ccpMobile"
+
+                />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <EditText
+            android:id="@+id/mAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_round"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="Select Address"
+            android:inputType="textMultiLine"
+            android:textColor="@color/black"
+            android:text=""
+            android:focusable="false"
+            android:paddingStart="20dp"
+            android:paddingEnd="10dp"
+            android:paddingVertical="14dp"
+            android:textSize="15sp"
+            android:drawableEnd="@drawable/location_gps2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mobileLayout" />
+
+
+
+
+
+        <TextView
+            android:id="@+id/mServiceType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Service Type"
+            android:textColor="@color/dark_blue"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/mAddress"
+            app:layout_constraintTop_toBottomOf="@+id/mAddress" />
+
+        <EditText
+            android:id="@+id/mSelectServiceType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_round"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="Select Service Type"
+            android:inputType="text"
+            android:maxLength="40"
+            android:focusable="false"
+            android:drawableEnd="@drawable/arrow_down"
+            android:paddingStart="20dp"
+            android:paddingEnd="10dp"
+            android:paddingVertical="14dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mServiceType" />
+
+
+
+
+
+        <TextView
+            android:id="@+id/mCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Category"
+            android:textColor="@color/dark_blue"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="@+id/mSelectServiceType"
+            app:layout_constraintTop_toBottomOf="@+id/mSelectServiceType" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCategoryList"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="@+id/mSelectServiceType"
+            app:layout_constraintStart_toStartOf="@+id/mCategory"
+            app:layout_constraintTop_toBottomOf="@+id/mCategory"
+            app:spanCount="2"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_category" />
+
+
+
+        <TextView
+            android:id="@+id/mSubCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Sub Category"
+            android:textColor="@color/dark_blue"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="@+id/rvCategoryList"
+            app:layout_constraintTop_toBottomOf="@+id/rvCategoryList" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSubCategoryList"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="@+id/rvCategoryList"
+            app:layout_constraintStart_toStartOf="@+id/rvCategoryList"
+            app:layout_constraintTop_toBottomOf="@+id/mSubCategory"
+            app:spanCount="2"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_category" />
+
+        <TextView
+            android:id="@+id/uploadD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Upload Document"
+            android:textColor="#2E2D2B"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvSubCategoryList" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDocs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_doc"
+            tools:itemCount="4"
+            android:layout_marginEnd="20dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/uploadD"
+            app:spanCount="2" />
+
+
+
+
+
+
+
+
+
+
+
+
+        <EditText
+            android:id="@+id/mEnterPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_round"
+       android:hint="Strong Password"
+            android:fontFamily="@font/montserrat_regular"
+            android:inputType="textPassword"
+            android:maxLength="20"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="15dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvDocs" />
+
+        <ImageView
+            android:id="@+id/passEye"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="15dp"
+            android:src="@drawable/hide"
+            app:layout_constraintBottom_toBottomOf="@+id/mEnterPassword"
+            app:layout_constraintEnd_toEndOf="@+id/mEnterPassword"
+            app:layout_constraintTop_toTopOf="@+id/mEnterPassword"
+            app:tint="#6A6A6A" />
+
+        <EditText
+            android:id="@+id/mEnterPassword2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_round"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:maxLength="20"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="15dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mEnterPassword" />
+
+        <ImageView
+            android:id="@+id/passEye2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="15dp"
+            android:src="@drawable/hide"
+            app:layout_constraintBottom_toBottomOf="@+id/mEnterPassword2"
+            app:layout_constraintEnd_toEndOf="@+id/mEnterPassword2"
+            app:layout_constraintTop_toTopOf="@+id/mEnterPassword2"
+            app:tint="#6A6A6A" />
+
+
+
+
+
+
+        <CheckBox
+            android:id="@+id/mTermsAndConditions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="10dp"
+            android:button="@null"
+            android:background="@null"
+            android:drawableTint="@color/dark_green"
+            android:drawableStart="@drawable/state_check"
+            android:buttonTint="@color/dark_green"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mEnterPassword2"/>
+
+
+        <TextView
+            android:id="@+id/mTerms"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_regular"
+            android:layout_marginStart="-10dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/mTermsAndConditions"
+            android:text="By creating an account, I agree to the Terms and Conditions"
+            app:layout_constraintTop_toBottomOf="@+id/mEnterPassword2"
+            />
+
+
+        <TextView
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginHorizontal="47dp"
+            android:backgroundTint="@color/dark_blue"
+            android:background="@drawable/bg_round_green"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center"
+            android:paddingVertical="18dp"
+            android:text="Submit"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/mTerms"
+            tools:layout_editor_absoluteX="16dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

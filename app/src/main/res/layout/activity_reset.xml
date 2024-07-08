@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    tools:context=".ui.m1.ResetActivity">
+
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        tools:layout_editor_absoluteX="16dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/home_logo1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-40dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Reset Password"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/otpText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="Create a strong new password"
+            android:textSize="14sp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <EditText
+            android:id="@+id/mEnterPassword"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_round"
+            android:fontFamily="@font/montserrat_semibold"
+            android:hint="New Password"
+            android:inputType="textPassword"
+            android:maxLength="20"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="15dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/otpText" />
+
+        <ImageView
+            android:id="@+id/passEye"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="15dp"
+            android:src="@drawable/hide"
+            app:layout_constraintBottom_toBottomOf="@+id/mEnterPassword"
+            app:layout_constraintEnd_toEndOf="@+id/mEnterPassword"
+            app:layout_constraintTop_toTopOf="@+id/mEnterPassword"
+            app:tint="#6A6A6A" />
+
+        <EditText
+            android:id="@+id/mEnterPassword2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_round"
+            android:fontFamily="@font/montserrat_semibold"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:maxLength="20"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="15dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mEnterPassword" />
+
+        <ImageView
+            android:id="@+id/passEye2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="15dp"
+            android:src="@drawable/hide"
+            app:layout_constraintBottom_toBottomOf="@+id/mEnterPassword2"
+            app:layout_constraintEnd_toEndOf="@+id/mEnterPassword2"
+            app:layout_constraintTop_toTopOf="@+id/mEnterPassword2"
+            app:tint="#6A6A6A" />
+
+
+
+
+        <TextView
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginHorizontal="47dp"
+            android:background="@drawable/bg_round_button"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center"
+            android:paddingVertical="18dp"
+            android:text="Submit"
+            android:textColor="@color/gray"
+            app:layout_constraintTop_toBottomOf="@+id/mEnterPassword2"
+            tools:layout_editor_absoluteX="16dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+    <ImageView
+        android:id="@+id/spa"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:rotation="0"
+        android:alpha="0.9"
+        android:src="@drawable/spa1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

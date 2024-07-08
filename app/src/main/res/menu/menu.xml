@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <item
+        android:id="@+id/mHome"
+        android:title="Home"
+        android:icon="@drawable/state_home"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/mActiveOrders"
+        android:title="Active Orders"
+        android:icon="@drawable/flag_afghanistan"
+        app:showAsAction="always"
+
+        />
+    <item
+        android:id="@+id/mMyDonation"
+        android:title="My Donation"
+        android:icon="@drawable/flag_albania"
+        app:showAsAction="always"
+
+        />
+
+    <item
+        android:id="@+id/mProfile"
+        android:title="Profile"
+        android:icon="@drawable/flag_argentina"
+        app:showAsAction="always"
+
+        />
+
+
+</menu>
