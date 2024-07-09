@@ -18,6 +18,7 @@ import com.developerdaya.serviceguru.R
 import com.developerdaya.serviceguru.databinding.ActivitySignupBinding
 import com.developerdaya.serviceguru.ui.m1.adapter.CategoryAdapter
 import com.developerdaya.serviceguru.ui.m1.adapter.DocumentAdapter
+import com.developerdaya.serviceguru.ui.m1.adapter.OnClick
 import com.home.genie.ui.moveActivityData
 import com.home.genie.ui.showToast
 import com.developerdaya.serviceguru.util.ErrorUtil
@@ -34,6 +35,9 @@ class SignupActivity : AppCompatActivity() {
     lateinit var m1ViewModel: M1ViewModel
     var REQUEST_LOCATION = 101
     var REQUEST_CAMERA = 102
+    var type = 0
+    var imagesList = ArrayList<Bitmap?>()
+    var documentAdapter:DocumentAdapter? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignupBinding.inflate(layoutInflater)
@@ -61,7 +65,22 @@ class SignupActivity : AppCompatActivity() {
 
         if (requestCode == REQUEST_CAMERA && resultCode == Activity.RESULT_OK) {
             val imageBitmap = data?.extras?.get("data") as Bitmap?
-            binding.mProfileIcon.setImageBitmap(imageBitmap)
+            when(type)
+            {
+                4->{
+                binding.mProfileIcon.setImageBitmap(imageBitmap)
+                }
+                else->
+                {
+                    imagesList[type]  = imageBitmap
+                    documentAdapter?.notifyDataSetChanged()
+
+                }
+
+
+
+
+            }
 
 
         }
@@ -90,21 +109,22 @@ class SignupActivity : AppCompatActivity() {
 
     fun openCamera()
     {
-        val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        if (takePictureIntent.resolveActivity(packageManager) != null)
+        askPermission()
+        if ((ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED))
         {
-            startActivityForResult(takePictureIntent, REQUEST_CAMERA)
+            val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            if (takePictureIntent.resolveActivity(packageManager) != null)
+            {
+                startActivityForResult(takePictureIntent, REQUEST_CAMERA)
+            }
         }
     }
 
      fun initControl()
      {
         binding.mAddIcon.setOnClickListener {
-            askPermission()
-            if ((ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED))
-            {
-                openCamera()
-            }
+            type = 4
+            openCamera()
         }
 
 
@@ -134,13 +154,21 @@ class SignupActivity : AppCompatActivity() {
 
 
     private fun initViews() {
+        repeat(4)
+        {
+            imagesList.add(null)
+        }
         var list = arrayListOf("Home Appliance","AC Services","Cars","Mobile","Electronics","Fashion")
         val list1 = arrayListOf("Home Cleaning","Mobile Repair","Ac Repair","Vehicle Repair","Car Wash")
-        var list3 = arrayListOf("Adhar Card","Driving License","Pan Card","Other")
         binding.rvCategoryList.adapter = CategoryAdapter(this, list)
         binding.rvSubCategoryList.adapter = CategoryAdapter(this, list1)
-        binding.rvDocs.adapter = DocumentAdapter(this, list3)
-
+        documentAdapter = DocumentAdapter(this, imagesList, onClick = object : OnClick {
+            override fun onClick(position: Int) {
+                type =position
+                openCamera()
+            }
+        })
+        binding.rvDocs.adapter = documentAdapter
 
 
 

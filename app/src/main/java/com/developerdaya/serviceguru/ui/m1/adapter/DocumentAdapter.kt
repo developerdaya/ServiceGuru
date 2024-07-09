@@ -1,13 +1,15 @@
 package com.developerdaya.serviceguru.ui.m1.adapter
 
 import android.content.Context
+import android.graphics.Bitmap
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.developerdaya.serviceguru.R
 import com.developerdaya.serviceguru.databinding.ItemCategoryBinding
 import com.developerdaya.serviceguru.databinding.ItemDocBinding
 
-class DocumentAdapter(var context: Context, val data: List<String>) :
+class DocumentAdapter(var context: Context, val data: List<Bitmap?>,val onClick: OnClick) :
     RecyclerView.Adapter<DocumentAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -27,16 +29,27 @@ class DocumentAdapter(var context: Context, val data: List<String>) :
 
     inner class ViewHolder(private val binding: ItemDocBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: String) {
-            binding.info.text = item
-          /*  binding.productImage.setImageResource(item.image)
+        fun bind(item: Bitmap?) {
+            if (item!=null)
+            {
+                binding.mImageView.setImageBitmap(item)
+            }
+            else
+            {
+                binding.mImageView.setImageResource(R.drawable.documents_place_holder)
+            }
+           // binding.info.text = item
             binding.root.setOnClickListener {
-                SubCategoryActivity.mTitle = item.name
-                SubCategoryActivity.mPosition = position1.toString()
-                context.startActivity(Intent(context, SubCategoryActivity::class.java))
-            }*/
+               onClick.onClick(position = position)
+            }
 
         }
     }
+}
+
+interface OnClick
+{
+    fun onClick(position: Int)
+
 }
 
